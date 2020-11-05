@@ -9,3 +9,15 @@ export const removeTodo = text => ({
     type: REMOVE_TODO,
     payload: { text },
 });
+
+export const MARK_TODO_AS_COMPLETED = 'MARK_TODO_AS_COMPLETED';
+export const markTodoAsCompleted = (text, completedFlag) => ({
+    type: MARK_TODO_AS_COMPLETED,
+    payload: { text, completedFlag },
+});
+
+export const HIDE_ALL_COMPLETED = 'HIDE_ALL_COMPLETED';
+export const hideAllCompleted = text => ({
+    type: HIDE_ALL_COMPLETED,
+    payload: { text },
+});

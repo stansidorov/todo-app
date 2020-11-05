@@ -21,6 +21,12 @@
     flex: 20 1 100px;
 }
 
+.completed-list-item {
+    flex: 20 1 100px;
+    text-decoration: line-through;
+    color: gray;
+}
+
 .remove-button {
     flex: 1 1 5px;
 }
