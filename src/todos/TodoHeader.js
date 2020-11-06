@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { getTodosHideFlag } from "./selectors";
+import { getTodosHidingFlag } from "./selectors";
 import { hideAllCompleted } from './actions';
 import './TodoHeader.css';
 
@@ -22,11 +22,11 @@ const TodoHeader = ({ isHiding, onHideAllCompleted }) => {
 };
 
 const mapStateToProps = state => ({
-    isHiding: getTodosHideFlag(state),
+    isHiding: getTodosHidingFlag(state),
 });
 
 const mapDispatchToProps = dispatch => ({
-    onHideAllCompleted: (isHiding) => dispatch(hideAllCompleted(isHiding)),
+    onHideAllCompleted: (hidingFlag) => dispatch(hideAllCompleted(hidingFlag)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(TodoHeader);

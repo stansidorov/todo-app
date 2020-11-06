@@ -1,7 +1,7 @@
 import { createSelector } from 'reselect';
 
 export const getTodos = state => state.todos.data;
-export const getTodosHideFlag = state => state.todos.isHiding
+export const getTodosHidingFlag = state => state.todos.hidingFlag
 
 export const getIncompleteTodos = createSelector(
     getTodos,

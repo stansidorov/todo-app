@@ -4,7 +4,7 @@ import NewTodoForm from './NewTodoForm';
 import TodoListItem from './TodoListItem';
 import {
     getTodos,
-    getTodosHideFlag,
+    getTodosHidingFlag,
     getAllTodos,
     getIncompleteTodos,
 } from './selectors';
@@ -27,8 +27,7 @@ const TodoList = ({isHiding, allTodos, incompletedTodos, onRemovePressed, onComp
 );
 
 const mapStateToProps = state => ({
-    isHiding: getTodosHideFlag(state),
-    //todos: getTodos(state),
+    isHiding: getTodosHidingFlag(state),
     allTodos: getAllTodos(state),
     incompletedTodos: getIncompleteTodos(state),
 });
