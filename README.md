@@ -22,3 +22,4 @@ To generate code-coverage:
 npm run coverage
 ```
 Also code-coverage report is included in the repo.
+The report can be seen [here](https://cranky-elion-3beb89.netlify.app/)
