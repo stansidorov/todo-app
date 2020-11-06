@@ -17,7 +17,7 @@ export const markTodoAsCompleted = (text, completedFlag) => ({
 });
 
 export const HIDE_ALL_COMPLETED = 'HIDE_ALL_COMPLETED';
-export const hideAllCompleted = text => ({
+export const hideAllCompleted = hideFlag => ({
     type: HIDE_ALL_COMPLETED,
-    payload: { text },
+    payload: { hideFlag },
 });
