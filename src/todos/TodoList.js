@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import NewTodoForm from './NewTodoForm';
 import TodoListItem from './TodoListItem';
 import {
-    getTodos,
     getTodosHidingFlag,
     getAllTodos,
     getIncompleteTodos,

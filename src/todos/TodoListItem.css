@@ -3,10 +3,8 @@
     border-radius: 8px;
     margin-top: 8px;
     padding: 12px;
-    /* position: relative; */
     box-shadow: 0 4px 8px grey;
     display: flex;
-    /* justify-content: space-between; */
 }
 
 .todo-item-container h3{
@@ -29,21 +27,6 @@
 
 .remove-button {
     flex: 1 1 5px;
-}
-
-/* .buttons-container {
-    position: absolute;
-    right: 12px;
-    bottom: 12px;
-} */
-
-
-/* .completed-button {
-    display: inline-block;
-    background-color: #22ee22;
-} */
-
-.remove-button {
     font-size: 12px;
     font-weight: 700;
     padding: 4px;
@@ -52,6 +35,4 @@
     outline: none;
     cursor: pointer;
     display: inline-block;
-    /* background-color: #ee2222; */
-    /* margin-left: 8px; */
 }

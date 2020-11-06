@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { getTodosHidingFlag } from "./selectors";
 import { hideAllCompleted } from './actions';
 import './TodoHeader.css';
 
 const TodoHeader = ({ isHiding, onHideAllCompleted }) => {
-    // const [inputValue, setInputValue] = useState('');
     return (
         <div className="todo-header">
             <div>
