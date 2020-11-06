@@ -31,6 +31,7 @@ export const todos = (state = [], action) => {
             return todo;
         });
     }
+    case HIDE_ALL_COMPLETED:
     default:
         return state;
     }
