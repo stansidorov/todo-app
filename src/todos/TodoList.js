@@ -2,15 +2,24 @@ import React from 'react';
 import { connect } from 'react-redux';
 import NewTodoForm from './NewTodoForm';
 import TodoListItem from './TodoListItem';
+import {
+    getTodos,
+    getTodosHideFlag,
+    getAllTodos,
+    getIncompleteTodos,
+} from './selectors';
 import TodoHeader from './TodoHeader';
-import { removeTodo, markTodoAsCompleted } from './actions';
+import { 
+    removeTodo, 
+    markTodoAsCompleted, 
+} from './actions';
 import './TodoList.css';
 
-const TodoList = ({ todos = [], onRemovePressed, onCompletedPressed }) => (
+const TodoList = ({isHiding, allTodos, incompletedTodos, onRemovePressed, onCompletedPressed }) => (
     <div className="app-wrapper">
         <TodoHeader />
         <NewTodoForm />
-        {todos.map(todo => <TodoListItem 
+        {(isHiding ? incompletedTodos : allTodos).map(todo => <TodoListItem 
             todo={todo} 
             onRemovePressed={onRemovePressed}
             onCompletedPressed={onCompletedPressed}/>)}
@@ -18,7 +27,10 @@ const TodoList = ({ todos = [], onRemovePressed, onCompletedPressed }) => (
 );
 
 const mapStateToProps = state => ({
-    todos: state.todos,
+    isHiding: getTodosHideFlag(state),
+    //todos: getTodos(state),
+    allTodos: getAllTodos(state),
+    incompletedTodos: getIncompleteTodos(state),
 });
 
 const mapDispatchToProps = dispatch => ({

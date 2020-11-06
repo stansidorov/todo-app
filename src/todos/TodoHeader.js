@@ -1,20 +1,32 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { getTodosHideFlag } from "./selectors";
+import { hideAllCompleted } from './actions';
 import './TodoHeader.css';
 
-const TodoHeader = () => {
+const TodoHeader = ({ isHiding, onHideAllCompleted }) => {
     // const [inputValue, setInputValue] = useState('');
-
     return (
         <div className="todo-header">
             <div>
                 <h2>Todo List (1)</h2>
             </div>
             <div>
-                <input type="checkbox" name="completed" id="completed"/> 
-                <label for="completed">Hide Completed Tasks</label>
+                <input type="checkbox" name="hide-all-completed" id="hide-all-completed"
+                 checked={(typeof isHiding === 'undefined' || isHiding === false) ? null : 'checked'}
+                 onChange={() => {onHideAllCompleted(!isHiding)}}/> 
+                <label for="hide-all-completed">Hide Completed Tasks</label>
             </div>
         </div>
     );
 };
 
-export default TodoHeader;
+const mapStateToProps = state => ({
+    isHiding: getTodosHideFlag(state),
+});
+
+const mapDispatchToProps = dispatch => ({
+    onHideAllCompleted: (isHiding) => dispatch(hideAllCompleted(isHiding)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(TodoHeader);

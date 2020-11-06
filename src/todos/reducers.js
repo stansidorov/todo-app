@@ -6,7 +6,9 @@ import {
     HIDE_ALL_COMPLETED
 } from './actions';
 
-export const todos = (state = [], action) => {
+const initialState = { isHiding: false, data: [] };
+
+export const todos = (state = initialState, action) => {
     const { type, payload } = action;
 
     switch (type) {
@@ -16,22 +18,40 @@ export const todos = (state = [], action) => {
             text,
             isCompleted: false,
         };
-        return state.concat(newTodo);
+        return {
+            ...state,
+            data: state.data.concat(newTodo),
+        };
     }
     case REMOVE_TODO: {
         const { text } = payload;
-        return state.filter(todo => todo.text !== text);
+        return {
+            ...state,
+            data: state.data.filter(todo => todo.text !== text),
+        };
     }
     case MARK_TODO_AS_COMPLETED: {
         const { text, completedFlag } = payload;
-        return state.map(todo => {
+        return {
+            ...state,
+            data: state.data.map(todo => {
             if (todo.text === text) {
                 return { ...todo, isCompleted: completedFlag };
             }
             return todo;
-        });
+            }),
+        };
     }
     case HIDE_ALL_COMPLETED:
+        const { isHiding } = payload;
+        const res = {
+            ...state,
+            isHiding: isHiding,
+        }
+        console.log(res);
+        return res;
+
+
     default:
         return state;
     }
