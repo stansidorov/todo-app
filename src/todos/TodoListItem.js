@@ -6,8 +6,7 @@ const TodoListItem = ({ todo, onRemovePressed, onCompletedPressed }) => (
         <div className="completed-item">   
             <input type="checkbox" name="completed" id="completed" 
              checked={(typeof todo.isCompleted === 'undefined' || todo.isCompleted === false) ? null : 'checked'}
-             onChange={() => {
-             onCompletedPressed(todo.text, !todo.isCompleted)}}/> 
+             onChange={() => {onCompletedPressed(todo.text, !todo.isCompleted)}}/> 
         </div>
         <div className={todo.isCompleted ? "completed-list-item": "list-item"}>
             <h3>{todo.text}</h3>
