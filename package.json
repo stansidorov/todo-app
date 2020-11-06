@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "npx webpack-dev-server --mode development",
     "build": "npx webpack --mode development",
-    "test": "mocha \"src/**/*.test.js\" --require @babel/register --recursive"
+    "test": "mocha \"src/**/*.test.js\" --require @babel/register --recursive",
+    "coverage": "nyc --reporter=html --reporter=text mocha \"src/**/*.test.js\" --require @babel/register --recursive"
   },
   "keywords": [],
   "author": "",
@@ -28,6 +29,7 @@
     "webpack-dev-server": "^3.10.1"
   },
   "dependencies": {
+    "nyc": "^15.1.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-redux": "^7.2.2",
