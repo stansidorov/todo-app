@@ -11,8 +11,6 @@ const initialState = { hidingFlag: false, data: [] };
 export const todos = (state = initialState, action) => {
     const { type, payload } = action;
 
-    console.log("My action", action);
-
     switch (type) {
     case CREATE_TODO: {
         const { text } = payload;

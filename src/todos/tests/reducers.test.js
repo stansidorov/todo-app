@@ -2,6 +2,23 @@ import { expect } from 'chai';
 import { todos } from '../reducers';
 
 describe('The todos reducer', () => {
+    it('Returns the same state', () => {
+        const fakeTodo = { text: 'hello',  isCompleted: false };
+
+        const originalState = { isHided: false, data: [fakeTodo] };
+
+        const fakeAction = {
+            type: 'GO_FISH',
+            payload: fakeTodo,
+        };
+
+        const actual = todos(originalState, fakeAction);
+
+        expect(actual).to.deep.equal(originalState);
+    });
+});
+
+describe('The todos reducer', () => {
     it('Adds a new todo when CREATE_TODO action is received', () => {
         const originalState = { isHided: false, data: [] };
 
@@ -86,6 +103,30 @@ describe('The todos reducer', () => {
         const expected = {
             isHided: false,
             data: [{text: fakeTodo.text, isCompleted: false},
+            ],
+        };
+
+        const actual = todos(originalState, fakeAction);
+
+        expect(actual).to.deep.equal(expected);
+    });
+});
+
+describe('The todos reducer', () => {
+    it('Returns todo when text does not match and MARK_TODO_AS_COMPLETED action is received', () => {
+
+        const fakeTodo = { text: 'hello',  isCompleted: true };
+
+        const originalState = { isHided: false, data: [fakeTodo] };
+
+        const fakeAction = {
+            type: 'MARK_TODO_AS_COMPLETED',
+            payload: { text: 'blah blah', completedFlag: true},
+        };
+
+        const expected = {
+            isHided: false,
+            data: [{text: fakeTodo.text, isCompleted: true},
             ],
         };
 
