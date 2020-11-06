@@ -10,6 +10,7 @@ npm install
 ```bash
 npm start
 ```
+Browse to http://localhost:3000/ to see the app
 
 ## Testing
 To run unit tests:
