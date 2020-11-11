@@ -2,7 +2,6 @@ import React from 'react';
 import './TodoListItem.css';
 
 const TodoListItem = ({ todo, onRemovePressed, onCompletedPressed }) => (
-    console.log("todollistitem", todo),
     <div className="todo-item-container">
         <div className="completed-item">   
             <input type="checkbox" name="completed" id="completed" 

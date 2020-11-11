@@ -6,7 +6,7 @@ import {
     HIDE_ALL_COMPLETED
 } from './actions';
 
-const initialState = { hidingFlag: false, data: [] };
+const initialState = { isHided: false, data: [] };
 
 export const todos = (state = initialState, action) => {
     const { type, payload } = action;
@@ -48,7 +48,6 @@ export const todos = (state = initialState, action) => {
             ...state,
             isHided: hidingFlag,
         }
-        console.log(res);
         return res;
 
     default:
