@@ -1,7 +1,4 @@
 import React, { useState } from 'react';
-import { connect } from 'react-redux';
-import { getTodos } from './selectors';
-import { createTodo } from './actions';
 import './NewTodoForm.css';
 
 const NewTodoForm = ({ todos, onCreateEntered }) => {
@@ -31,12 +28,4 @@ const NewTodoForm = ({ todos, onCreateEntered }) => {
     );
 };
 
-const mapStateToProps = state => ({
-    todos: getTodos(state),
-});
-
-const mapDispatchToProps = dispatch => ({
-    onCreateEntered: text => dispatch(createTodo(text)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(NewTodoForm);
+export default NewTodoForm;
