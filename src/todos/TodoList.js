@@ -18,7 +18,8 @@ const TodoList = ({isHiding, allTodos, incompletedTodos, onRemovePressed, onComp
     <div className="app-wrapper">
         <TodoHeader />
         <NewTodoForm />
-        {(isHiding ? incompletedTodos : allTodos).map(todo => <TodoListItem 
+        {(isHiding ? incompletedTodos : allTodos).map((todo, i) => <TodoListItem
+            key={i}
             todo={todo} 
             onRemovePressed={onRemovePressed}
             onCompletedPressed={onCompletedPressed}/>)}
