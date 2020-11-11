@@ -2,10 +2,11 @@ import React from 'react';
 import './TodoListItem.css';
 
 const TodoListItem = ({ todo, onRemovePressed, onCompletedPressed }) => (
+    console.log("todollistitem", todo),
     <div className="todo-item-container">
         <div className="completed-item">   
             <input type="checkbox" name="completed" id="completed" 
-             checked={(typeof todo.isCompleted === 'undefined' || todo.isCompleted === false) ? null : 'checked'}
+             checked={todo.isCompleted === true ? true : false}
              onChange={() => {onCompletedPressed(todo.text, !todo.isCompleted)}}/> 
         </div>
         <div className={todo.isCompleted ? "completed-list-item": "list-item"}>

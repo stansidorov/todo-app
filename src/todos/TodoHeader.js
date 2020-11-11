@@ -12,7 +12,7 @@ const TodoHeader = ({ isHiding, onHideAllCompleted }) => {
             </div>
             <div>
                 <input type="checkbox" name="hide-all-completed" id="hide-all-completed"
-                 checked={(typeof isHiding === 'undefined' || isHiding === false) ? null : 'checked'}
+                 checked={isHiding === true ? true : false}
                  onChange={() => {onHideAllCompleted(!isHiding)}}/> 
                 <label htmlFor="hide-all-completed">Hide Completed Tasks</label>
             </div>
