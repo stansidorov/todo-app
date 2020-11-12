@@ -5,7 +5,7 @@ describe('The todos reducer', () => {
     it('Returns the same state', () => {
         const fakeTodo = { text: 'hello',  isCompleted: false };
 
-        const originalState = { isHided: false, data: [fakeTodo] };
+        const originalState = { isHidden: false, data: [fakeTodo] };
 
         const fakeAction = {
             type: 'GO_FISH',
@@ -20,7 +20,7 @@ describe('The todos reducer', () => {
 
 describe('The todos reducer', () => {
     it('Adds a new todo when CREATE_TODO action is received', () => {
-        const originalState = { isHided: false, data: [] };
+        const originalState = { isHidden: false, data: [] };
 
         const fakeTodo = { text: 'hello' };
 
@@ -30,7 +30,7 @@ describe('The todos reducer', () => {
         };
 
         const expected = {
-            isHided: false,
+            isHidden: false,
             data: [{...fakeTodo, isCompleted: false}],
         };
 
@@ -46,7 +46,7 @@ describe('The todos reducer', () => {
         const fakeTodo1 = { text: 'hello',  isCompleted: false };
         const fakeTodo2 = { text: 'hi',  isCompleted: false };
 
-        const originalState = { isHided: false, data: [fakeTodo1, fakeTodo2] };
+        const originalState = { isHidden: false, data: [fakeTodo1, fakeTodo2] };
 
         const fakeAction = {
             type: 'REMOVE_TODO',
@@ -54,7 +54,7 @@ describe('The todos reducer', () => {
         };
 
         const expected = {
-            isHided: false,
+            isHidden: false,
             data: [fakeTodo2],
         };
 
@@ -69,7 +69,7 @@ describe('The todos reducer', () => {
 
         const fakeTodo = { text: 'hello',  isCompleted: false };
 
-        const originalState = { isHided: false, data: [fakeTodo] };
+        const originalState = { isHidden: false, data: [fakeTodo] };
 
         const fakeAction = {
             type: 'MARK_TODO_AS_COMPLETED',
@@ -77,7 +77,7 @@ describe('The todos reducer', () => {
         };
 
         const expected = {
-            isHided: false,
+            isHidden: false,
             data: [{text: fakeTodo.text, isCompleted: true},
             ],
         };
@@ -93,7 +93,7 @@ describe('The todos reducer', () => {
 
         const fakeTodo = { text: 'hello',  isCompleted: true };
 
-        const originalState = { isHided: false, data: [fakeTodo] };
+        const originalState = { isHidden: false, data: [fakeTodo] };
 
         const fakeAction = {
             type: 'MARK_TODO_AS_COMPLETED',
@@ -101,7 +101,7 @@ describe('The todos reducer', () => {
         };
 
         const expected = {
-            isHided: false,
+            isHidden: false,
             data: [{text: fakeTodo.text, isCompleted: false},
             ],
         };
@@ -117,7 +117,7 @@ describe('The todos reducer', () => {
 
         const fakeTodo = { text: 'hello',  isCompleted: true };
 
-        const originalState = { isHided: false, data: [fakeTodo] };
+        const originalState = { isHidden: false, data: [fakeTodo] };
 
         const fakeAction = {
             type: 'MARK_TODO_AS_COMPLETED',
@@ -125,7 +125,7 @@ describe('The todos reducer', () => {
         };
 
         const expected = {
-            isHided: false,
+            isHidden: false,
             data: [{text: fakeTodo.text, isCompleted: true},
             ],
         };
@@ -142,7 +142,7 @@ describe('The todos reducer', () => {
         const fakeTodo = { text: 'hello',  isCompleted: true };
 
         const originalState = { 
-            isHided: false,
+            isHidden: false,
              data: [fakeTodo],
             };
 
@@ -152,7 +152,7 @@ describe('The todos reducer', () => {
         };
 
         const expected = {
-            isHided: true,
+            isHidden: true,
             data: [fakeTodo],
         };
 
